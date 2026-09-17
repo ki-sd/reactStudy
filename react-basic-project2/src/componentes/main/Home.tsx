@@ -31,7 +31,7 @@ function Home(){
     const html=foodData?.list.map((food:Food)=>
         <div className="col-md-3">
             <div className="thumbnail">
-                <Link to="#">
+                <Link to={`/food/detail/${food.no}`}>
                     <img src={food.poster} alt={food.address} style={{"width":"250%","height":"150px","objectFit":"cover"}}/>
                     <div className="caption">
                         <p>{food.name}</p>
@@ -40,10 +40,38 @@ function Home(){
             </div>
         </div>
     )
+    // 이벤트
+    const prev=()=>foodData && setCurpage(foodData.startPage-1)
+    const pageChange=(page:number)=>foodData && setCurpage(page)
+    const next=()=>foodData && setCurpage(foodData.endPage+1)
+    // 페이지
+    const pageArr=[]
+    if(foodData && foodData?.startPage>1){
+        pageArr.push(
+            <li><a className={"nav-link"} onClick={prev}>&laquo;</a></li>
+        )
+    }
+    if(foodData){
+        for(let i:number=foodData.startPage;i<=foodData.endPage;i++){
+            pageArr.push(
+                <li className={i===curpage?"active":""}><a className={"nav-link"} onClick={()=>pageChange(i)}>{i}</a></li>
+            )
+        }
+    }
+    if(foodData && foodData?.endPage<foodData.totalpage){
+        pageArr.push(
+            <li><a className={"nav-link"} onClick={next}>&raquo;</a></li>
+        )
+    }
     return(
         <div className={"container"}>
             <div className={"row"}>
                 {html}
+            </div>
+            <div className={"row text-center"} style={{"marginTop":"10px"}}>
+                <ul className={"pagination"}>
+                {pageArr}
+                </ul>
             </div>
         </div>
     )
