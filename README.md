@@ -19,6 +19,9 @@
 	<p>
 		<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" align="absmiddle">
 		<img src="https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white" align="absmiddle">
+		<img src="https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=redux&logoColor=white" align="absmiddle">
+		<img src="https://img.shields.io/badge/TanStack_Query-FF4154?style=flat-square&logo=reactquery&logoColor=white" align="absmiddle">
+		<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" align="absmiddle">
 * **Network & API** 
 	<p>
 		<img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white" align="absmiddle">
